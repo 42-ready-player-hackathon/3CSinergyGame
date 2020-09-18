@@ -17,7 +17,9 @@ public class PlayerManager : MonoBehaviour{
 		void Start(){
 				currentTime = startingTime;
 		}
-
+		public void StartLevel(){
+			Application.LoadLevel (1);
+		}
 		void Update () {
 				currentTime -= 1 * Time.deltaTime - addedTime;
 				addedTime = 0;
@@ -25,7 +27,7 @@ public class PlayerManager : MonoBehaviour{
 				countdownText.text =  currentTime.ToString("0");
 				if (currentTime <= 0){
 						countdownText.text = "Game Over";// GameOver
-						Application.Quit();
+						StartLevel();
 				}
 		}
 
