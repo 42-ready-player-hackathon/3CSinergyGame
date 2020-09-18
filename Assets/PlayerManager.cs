@@ -22,9 +22,11 @@ public class PlayerManager : MonoBehaviour{
 				currentTime -= 1 * Time.deltaTime - addedTime;
 				addedTime = 0;
 				pointText.text = currentPoint.ToString();
-				countdownText.text = currentTime.ToString("0");
+				countdownText.text =  currentTime.ToString("0");
 				if (currentTime <= 0){
 						countdownText.text = "Game Over";// GameOver
+						UnityEditor.EditorApplication.isPlaying = false;
+						Application.Quit();
 				}
 		}
 
@@ -33,10 +35,12 @@ public class PlayerManager : MonoBehaviour{
 						currentPoint++;
 				}
 				else if (obj.tag == "mask"){
-						addedTime = 10f;
+						addedTime = 2f;
 				}
 				else if (obj.tag == "obstacle"){
 						countdownText.text = "Game Over";// GameOver
+						UnityEditor.EditorApplication.isPlaying = false;
+						Application.Quit();
 				}
 		}
 
