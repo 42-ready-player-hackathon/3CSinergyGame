@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour{
 				currentTime -= 1 * Time.deltaTime - addedTime;
 				addedTime = 0;
 				pointText.text = currentPoint.ToString();
+				
 				countdownText.text =  currentTime.ToString("0");
 				if (currentTime <= 0){
 						countdownText.text = "Game Over";// GameOver
