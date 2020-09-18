@@ -25,7 +25,6 @@ public class PlayerManager : MonoBehaviour{
 				countdownText.text =  currentTime.ToString("0");
 				if (currentTime <= 0){
 						countdownText.text = "Game Over";// GameOver
-						UnityEditor.EditorApplication.isPlaying = false;
 						Application.Quit();
 				}
 		}
@@ -39,7 +38,6 @@ public class PlayerManager : MonoBehaviour{
 				}
 				else if (obj.tag == "obstacle"){
 						countdownText.text = "Game Over";// GameOver
-						UnityEditor.EditorApplication.isPlaying = false;
 						Application.Quit();
 				}
 		}
